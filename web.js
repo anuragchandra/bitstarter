@@ -4,8 +4,8 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 
 app.get('/', function(request, response) {
-  fs.readFileSync('index.html');
-  response.send(fs.toString());
+  var buffer= fs.readFileSync('index.html');
+  response.send(buffer.toString());
  // response.send('Hello World 2!');
 });
 
